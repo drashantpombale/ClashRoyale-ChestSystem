@@ -172,9 +172,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   equipped: 0
+  started: 0
   skipTime: {fileID: 312537990}
-  timer: {fileID: 1816236315}
+  timerText: {fileID: 1816236315}
   skipGems: {fileID: 1210610489}
+  timer: 0
+  GoldReward: 0
+  GemReward: 0
 --- !u!1 &312537988
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,10 +354,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cac88ea3136440240a4a3a5a90e4317a, type: 2}
   spawnButton: {fileID: 2126080892}
   chestSlot:
-  - {fileID: 7196512}
-  - {fileID: 699075580}
-  - {fileID: 1571028128}
-  - {fileID: 1785530370}
+  - {fileID: 7196514}
+  - {fileID: 699075582}
+  - {fileID: 1571028130}
+  - {fileID: 1785530372}
 --- !u!1 &423528640
 GameObject:
   m_ObjectHideFlags: 0
@@ -527,7 +531,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &496020289
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1029,9 +1033,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   equipped: 0
+  started: 0
   skipTime: {fileID: 1318374298}
-  timer: {fileID: 496020290}
+  timerText: {fileID: 496020290}
   skipGems: {fileID: 1289128806}
+  timer: 0
+  GoldReward: 0
+  GemReward: 0
 --- !u!1 &733476590
 GameObject:
   m_ObjectHideFlags: 0
@@ -1123,7 +1131,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1070821750
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1256,7 +1264,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1210610488
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1295,7 +1303,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'GEMS:'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1389,7 +1397,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1289128805
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1428,7 +1436,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'GEMS:'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1641,7 +1649,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1466272598
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1680,7 +1688,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'GEMS:'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1774,7 +1782,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1532092593
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1941,9 +1949,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   equipped: 0
+  started: 0
   skipTime: {fileID: 641333679}
-  timer: {fileID: 1070821751}
+  timerText: {fileID: 1070821751}
   skipGems: {fileID: 1681803802}
+  timer: 0
+  GoldReward: 0
+  GemReward: 0
 --- !u!1 &1621331840
 GameObject:
   m_ObjectHideFlags: 0
@@ -1981,7 +1993,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -442, y: 399}
+  m_AnchoredPosition: {x: -438, y: 399}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1621331842
@@ -2026,7 +2038,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1681803801
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2065,7 +2077,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'GEMS:'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2171,8 +2183,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db82daa4161a7b64b9b16db81b35c3e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chestSlot: []
-  empty: 0
 --- !u!4 &1712847659
 Transform:
   m_ObjectHideFlags: 0
@@ -2340,9 +2350,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   equipped: 0
+  started: 0
   skipTime: {fileID: 423528642}
-  timer: {fileID: 1532092594}
+  timerText: {fileID: 1532092594}
   skipGems: {fileID: 1466272599}
+  timer: 0
+  GoldReward: 0
+  GemReward: 0
 --- !u!1 &1792865966
 GameObject:
   m_ObjectHideFlags: 0
@@ -2426,7 +2440,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1816236314
 RectTransform:
   m_ObjectHideFlags: 0
