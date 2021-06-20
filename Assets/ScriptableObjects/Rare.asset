@@ -17,5 +17,5 @@ MonoBehaviour:
   gemMax: 40
   coinsMin: 300
   coinsMax: 500
-  Timer: 1
+  Timer: 30
   color: {r: 0.026666641, g: 0, b: 1, a: 1}

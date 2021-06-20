@@ -658,6 +658,7 @@
     <Compile Include="Assets\Scripts\Chest.cs" />
     <Compile Include="Assets\Scripts\ChestSlot.cs" />
     <Compile Include="Assets\Scripts\ChestSpawner.cs" />
+    <Compile Include="Assets\Scripts\PlayerCurrency.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />

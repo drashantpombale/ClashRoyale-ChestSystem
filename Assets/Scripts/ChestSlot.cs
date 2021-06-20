@@ -9,8 +9,10 @@ public class ChestSlot : MonoBehaviour
 {
     public bool equipped,started;
     public Button skipTime;
+    public Image gem;
     public TextMeshProUGUI timerText;
-    public TextMeshProUGUI skipGems;
+    public TextMeshProUGUI skipGemsText;
+    public int skipGems;
     public float timer;
     float hours;
     float minutes;
@@ -20,27 +22,34 @@ public class ChestSlot : MonoBehaviour
     public int GemReward;
     private void Awake()
     {
+        skipTime.enabled = false;
         equipped = started = false;
-        skipGems.enabled = false;
+        skipGemsText.enabled = false;
         timerText.enabled = false;
+    }
+
+    private void Start()
+    {
+        skipTime.onClick.AddListener(UnEquipSlot);
     }
 
     private void Update()
     {
         if (equipped && started)
         {
+            skipTime.enabled = true;
             float hours = timer / 3600;
             float minutes = timer / 60;
             if (timer > 0)
             {
                 timer -= Time.deltaTime;
                 timerText.text = Mathf.FloorToInt(hours) + "h" + Mathf.FloorToInt(minutes / Mathf.CeilToInt(hours)) + "m" + Mathf.FloorToInt(timer % 60) + "s";
-                skipGems.text = "GEMS: " + Mathf.CeilToInt(minutes / 10);
+                skipGems = Mathf.CeilToInt(minutes / 10);
+                skipGemsText.text = ""+skipGems;
+                gem.gameObject.SetActive(true);
             }
             else if (timer < 0) {
-                timer = 0;
                 UnEquipSlot();
-                ChestSpawner.FreeSlot();
             }
         }
         else if (equipped && !started)
@@ -50,22 +59,42 @@ public class ChestSlot : MonoBehaviour
             if (Mathf.FloorToInt(hours) != 0)
                 timerText.text = "Locked: " + hours + "h";
             else timerText.text = "Locked " + minutes + "m";
-            skipGems.text = "";
+            skipGemsText.text = "";
         }
         
     }
 
     private void UnEquipSlot()
     {
-        //add coins and gems and free the slot
-        skipTime.image.color = Color.grey;
+        if (timer >= 0)
+        {
+            if (PlayerCurrency.playerGems >= skipGems)
+            {
+                PlayerCurrency.playerGems = -skipGems;
+            }
+            else {
+                Debug.Log("Not enough gems");
+                return;
+                    };
+        }
+        gem.gameObject.SetActive(false);
+        timer = 0;
+        skipTime.image.color = Color.white;
         timerText.text = "";
-        skipGems.text = "";
+        skipGemsText.text = "";
         equipped = false;
+        started = false;
+        Debug.Log("Gold-" + GoldReward + "  Gems-" + GemReward);
+        PlayerCurrency.playerCoins = GoldReward;
+        PlayerCurrency.playerGems = GemReward;
+        GoldReward = GemReward = 0;
+        ChestSpawner.FreeSlot();
+
+        skipTime.enabled = false;
     }
 
     public void enableText() {
-        skipGems.enabled = true;
+        skipGemsText.enabled = true;
         timerText.enabled = true;
     }
     public void StartOpening() {

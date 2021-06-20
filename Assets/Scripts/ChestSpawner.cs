@@ -28,15 +28,15 @@ public class ChestSpawner : MonoBehaviour
 
     private void SpawnChest()
     {
-        Debug.Log("Button clicked");
         int spawnNumber = UnityEngine.Random.Range(0,chests.Length);
         Chest newChest = chests[spawnNumber];
         ChestSlot slot;
+        int emptyslot = findEmpty();
         if (empty < chestSlot.Length)
         {
-            slotQueue.Enqueue(chestSlot[empty]);
+            slotQueue.Enqueue(chestSlot[emptyslot]);
             isEmpty = false;
-            slot = chestSlot[findEmpty()];
+            slot = chestSlot[emptyslot];
             slot.enableText();
             slot.equipped = true;
             slot.GemReward = UnityEngine.Random.Range(newChest.gemMin, newChest.gemMax + 1);
@@ -46,7 +46,7 @@ public class ChestSpawner : MonoBehaviour
             empty++;
         }
         else {
-            Debug.Log("All slots full wait for some time bro");
+            Debug.Log("All slots full");
         }
         
     }
@@ -72,5 +72,7 @@ public class ChestSpawner : MonoBehaviour
     public static void FreeSlot() {
         ChestSpawner.isProcessing = false;
         ChestSpawner.empty--;
+        Debug.Log(empty);
+        if (empty == 0) isEmpty = true;
     }
 }
